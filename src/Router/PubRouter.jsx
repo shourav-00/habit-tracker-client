@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     path: "/",
     Component: Layout,
     children: [
-      { index: true, path: "/home", Component: Home },
+      { index: true, Component: Home },
       { path: "/addHabits", Component: Addhabit },
       {
         path: "/publicHabits",
