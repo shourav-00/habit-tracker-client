@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="bg-gray-900 text-white mt-10">
+    <div className="">
+      <footer className="bg-gray-900 text-white pt-3">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-10 grid grid-cols-2 md:grid-cols-4 gap-8">
       
         <div>
@@ -17,7 +17,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Column 2 - Social */}
+   
         <div>
           <h3 className="font-semibold mb-3">Social</h3>
           <ul className="space-y-2 text-gray-300">
@@ -66,3 +66,9 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
