@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from "react";
+import { use, useState } from "react";
 import logoImg from "../assets/handwritten-d-logo-elegant-script-vector-22854819.avif";
 import { Link, NavLink, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
@@ -7,9 +7,11 @@ import signOutImg from "../assets/Sign-Out.svg";
 import { toast } from "react-toastify";
 
 const Navbar = () => {
-  const { user, loading,logOut } = use(AuthContext);
+  const { user, logOut } = use(AuthContext);
   const [open, setOpen] = useState(false);
   const navigate=useNavigate();
+  console.log(user)
+  //console.log(user.photoURL);
 
   
   

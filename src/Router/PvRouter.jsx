@@ -5,7 +5,7 @@ import { Navigate, useLocation } from 'react-router';
 const PvRouter = ({children}) => {
     const {user}=use(AuthContext)
     const location=useLocation();
-    console.log(location)
+    //console.log(location)
     if(user){
         return children
     }
