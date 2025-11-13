@@ -12,7 +12,7 @@ const HabitDetails = ({ updateHabitInParent }) => {
   //   fetch(`http://localhost:3000/UserData/${id}`)
   //     .then((res) => res.json())
   //     .then((data) => {
-  //       console.log("Fetched data:", data); // check this output
+  //       console.log("Fetched data:", data);
   //       setHabit(data);
   //       const todayStr = new Date().toDateString();
   //       setTodayCompleted(data.completionHistory?.includes(todayStr));
@@ -22,12 +22,11 @@ const HabitDetails = ({ updateHabitInParent }) => {
 
 
   useEffect(() => {
-  fetch(`http://localhost:3000/habit/${id}`)
+  fetch(`http://localhost:3000/publicUserHabit/${id}`)
     .then(res => res.json())
     .then(data => {
       setHabit(data);
 
-      // today completion check
       const todayStr = new Date().toDateString();
       setTodayCompleted(data.completionHistory?.includes(todayStr));
     })
