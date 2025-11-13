@@ -16,6 +16,7 @@ import fawesome from '../assets/bullseye-solid-full.svg'
 import fawesome2 from '../assets/lightbulb-solid-full.svg'
 import fawesome3 from '../assets/comment-dots-regular-full.svg'
 import fawesome4 from '../assets/seedling-solid-full.svg'
+import LatestHabit from "../Components/LatestHabit";
 
 
 const Home = () => {
@@ -171,9 +172,12 @@ const Home = () => {
       {/* DB Featured Habits Section  */}
       <div>
         <h2 className="font-bold text-center">FROM DB</h2>
+        <LatestHabit>
+
+        </LatestHabit>
       </div>
 
-      <div class="w-full h-64 rounded-t-4xl  bg-gradient-to-r from-[#deeafc] to-[#f4efff] mt-10 rounded-2xl">
+      <div className="w-full h-64 rounded-t-4xl  bg-gradient-to-r from-[#deeafc] to-[#f4efff] mt-10 rounded-2xl">
         {/* <img className="w-20 rounded-sm" src={grow} alt="" /> */}
 
         <h2 className="text-center p-5 font-bold">

@@ -11,7 +11,7 @@ const AddHabit = () => {
     const description = e.target.description.value;
     const category = e.target.category.value;
     const time = e.target.time.value;
-    const image = e.target.image.files[0]; // gives the selected file
+    const image = e.target.image.files[0];
     const name = e.target.name.value;
     const email = e.target.email.value;
     console.log(title, description, time, category, image, name, email);
@@ -53,7 +53,7 @@ const AddHabit = () => {
         </h2>
 
         <form onSubmit={handleAddHabit} className="space-y-5">
-          {/* Habit Title */}
+      
           <div>
             <label className="text-white block mb-1">Habit Title</label>
             <input
@@ -65,7 +65,7 @@ const AddHabit = () => {
             />
           </div>
 
-          {/* Description */}
+       
           <div>
             <label className="text-white block mb-1">Description</label>
             <textarea
@@ -77,7 +77,7 @@ const AddHabit = () => {
             ></textarea>
           </div>
 
-          {/* Category Dropdown */}
+    
           <div>
             <label className="text-white block mb-1">Category</label>
             <select
@@ -94,7 +94,6 @@ const AddHabit = () => {
             </select>
           </div>
 
-          {/* Reminder Time */}
           <div>
             <label className="text-white block mb-1">Reminder Time</label>
             <input
@@ -105,7 +104,7 @@ const AddHabit = () => {
             />
           </div>
 
-          {/* Upload Image */}
+      
           <div>
             <label className="text-white block mb-1">
               Upload Image (Optional)
@@ -118,7 +117,7 @@ const AddHabit = () => {
             />
           </div>
 
-          {/* User Info (Read Only) */}
+
           <div className="flex flex-col md:flex-row gap-3">
             <div className="flex-1">
               <label className="text-white block mb-1">User Name</label>
@@ -143,7 +142,7 @@ const AddHabit = () => {
             </div>
           </div>
 
-          {/* Submit Button */}
+
           <div className="flex justify-end">
             <button
               type="submit"

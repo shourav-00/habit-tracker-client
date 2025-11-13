@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 
 const Register = () => {
-  const { createUser, signInGoogle, loading, user, upProfile } =
+  const { createUser, signInGoogle, loading, user,setUser, upProfile } =
     use(AuthContext);
     const navigate=useNavigate()
   const [passValidity, setPassValidity] = useState("");
@@ -32,7 +32,7 @@ const Register = () => {
     const password = e.target.password.value;
     const userName = e.target.userName.value;
     const photoUrl = e.target.PhotoURL.value;
-    console.log(userName, photoUrl);
+    //console.log(userName, photoUrl);
     if (!passwordRegex.test(password)) {
       setPassValidity(
         "Password must have at least one uppercase letter, one lowercase letter, and minimum 6 characters."
@@ -41,25 +41,25 @@ const Register = () => {
     }
     //console.log(email,password);
     createUser(email, password)
-      .then((res) => {
-        const currentUser = res.user;
-       upProfile(currentUser, {
-          displayName: userName,
-          photoURL: photoUrl,
-        })
-          .then(async () => {
-            await currentUser.reload();
-          })
-          .then((res) => {
-            console.log(res);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-        toast.success("Created Accout successfully");
-        console.log(res.user);
-        navigate('/')
+    .then((res) => {
+      const currentUser = res.user;
+        //navigate("/");
+      // Update profile
+      upProfile(currentUser, {
+        displayName: userName,
+        photoURL: photoUrl,
       })
+        .then(() => {
+          // Update context user
+               navigate("/");
+          setUser(currentUser);
+          toast.success("Account created successfully");
+     
+        })
+        .catch((err) => {
+          toast.error(err.message);
+        });
+    })
       .catch((err) => {
         console.log(err.message);
       });
@@ -333,3 +333,5 @@ const Register = () => {
 };
 
 export default Register;
+
+

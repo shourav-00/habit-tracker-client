@@ -11,6 +11,9 @@ import PvRouter from "./PvRouter";
 import Addhabit from "../Pages/AddHabit";
 import MyHabits from "../Pages/MyHabits";
 import PublicHabits from "../Pages/PublicHabits";
+import HabitDetails from "../Components/HabitDetails";
+import Update from "../Pages/Update";
+import Delete from "../Pages/Delete";
 
 
 export const router = createBrowserRouter([
@@ -34,8 +37,28 @@ export const router = createBrowserRouter([
         </PvRouter>
       },
       {
+        path: `habitDetails/:id`,
+        element:<PvRouter>
+          <HabitDetails></HabitDetails>
+        </PvRouter>
+      },
+       {
+        path: "update/:id",
+        element:<PvRouter>
+          <Update></Update>
+        </PvRouter>
+      },
+      {
+        path: "delete",
+        element:<PvRouter>
+          <Delete></Delete>
+        </PvRouter>
+      },
+
+      {
         path: "/login",
-        Component: Login,
+        Component:Login,
+       
       },
 
       {
