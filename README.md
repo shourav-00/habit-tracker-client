@@ -86,3 +86,9 @@ Tech Stack-
 .Backend: Node.js + Express + MongoDB
 
 .Other: dotenv for environment variables, fetch API for backend calls
+
+
+
+
+
+Contact: Email:shouravchowdhury400@gmail.com
