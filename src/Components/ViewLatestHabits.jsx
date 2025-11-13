@@ -6,9 +6,11 @@ import Evening from "../assets/moon.jpg";
 import Work from "../assets/work.png";
 import Fitness from "../assets/fitness.jpg";
 import Study from "../assets/education.webp";
+import { useNavigate } from "react-router";
 
 const ViewLatestHabits = ({ habits }) => {
   const { user } = useContext(AuthContext);
+  const navigate=useNavigate()
 
   const categoryImage = (category) => {
     switch (category) {
@@ -26,6 +28,9 @@ const ViewLatestHabits = ({ habits }) => {
         return null;
     }
   };
+  const handleViaDetails = (id) => {
+    navigate(`/habitDetails/${id}`)
+  }
 
   return (
     <div className="py-6">
@@ -62,7 +67,11 @@ const ViewLatestHabits = ({ habits }) => {
                 <span className="font-semibold">User:</span> {habit.name}
               </p>
             </div>
-            <button className="bg-[#00b5d9] text-white font-semibold py-2 rounded-md hover:bg-white hover:text-black transition-all">
+            <button
+              key={habit._id}
+              onClick={() => handleViaDetails(habit._id)} // pass habit id dynamically
+              className="bg-[#00b5d9] text-white font-semibold py-2 rounded-md hover:bg-white hover:text-black transition-all"
+            >
               View Details
             </button>
           </div>

@@ -256,7 +256,7 @@ const Home = () => {
       </div>
 
       {/* Payment Price Explore */}
-      <div>
+      <div className="mb-15">
         <div className="w-full rounded-2xl mt-20 flex items-center">
           <span className="border-t-gray-400 border-t-2 flex-1"></span>
           <span className="px-4 text-center whitespace-nowrap">

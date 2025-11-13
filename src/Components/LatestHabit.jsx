@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from "react";
 import ViewLatestHabits from "./ViewLatestHabits";
 import { AuthContext } from "../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const LatestHabit = () => {
   const {loading} = use(AuthContext);
@@ -16,10 +17,14 @@ const LatestHabit = () => {
   // }
 
   useEffect(() => {
-    fetch("http://localhost:3000/publicHabitsLinit")
+    fetch("http://localhost:3000/publicHabitsLimit")
       .then((res) => res.json())
-      .then((data) => setHabits(data))
-      .catch((err) => console.error(err));
+      .then((data) =>{
+        setHabits(data)
+         //console.log(data)
+        }
+        )
+      .catch((err) => toast(err.message));
   }, []);
   return (
     <div>
