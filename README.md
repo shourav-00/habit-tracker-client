@@ -1,4 +1,4 @@
-Netlify Link:https://bespoke-cassata-1cb972.netlify.app/publicHabits
+Netlify Link:https://bespoke-cassata-1cb972.netlify.app/
 
 
 Project Name: Habit Tracker
