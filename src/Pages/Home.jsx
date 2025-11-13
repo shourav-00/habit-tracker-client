@@ -5,6 +5,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import habitTracker from "../assets/habit-tracker-app-icon.avif";
+import images from '../assets/a.png'
 
 import slider4 from "../assets/S-4.avif";
 import slider1 from "../assets/S-1.avif";
@@ -12,25 +13,34 @@ import sliderL from "../assets/S-L.avif";
 import sliderR from "../assets/S_R.avif";
 import sliderS from "../assets/S-S.avif";
 
-import fawesome from '../assets/bullseye-solid-full.svg'
-import fawesome2 from '../assets/lightbulb-solid-full.svg'
-import fawesome3 from '../assets/comment-dots-regular-full.svg'
-import fawesome4 from '../assets/seedling-solid-full.svg'
-import LatestHabit from "../Components/LatestHabit";
 
+import fawesome from "../assets/bullseye-solid-full.svg";
+import fawesome2 from "../assets/lightbulb-solid-full.svg";
+import fawesome3 from "../assets/comment-dots-regular-full.svg";
+import fawesome4 from "../assets/seedling-solid-full.svg";
+import LatestHabit from "../Components/LatestHabit";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-      <div className="text-center mt-10 sm:mt-[120px]">
-        <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-8">
-          Boost your day, every day.
-        </h1>
-        <p className="text-base md:text-lg">
-          Stay consistent, stay focused, and watch your habits transform your
-          life.
-        </p>
-      </div>
+      <motion.div
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 1 }}
+      >
+        <div className="text-center mt-10 sm:mt-[120px]">
+          <h1 className="text-4xl md:text-6xl font-bold mb-3 md:mb-8">
+            Boost your day, every day.
+          </h1>
+          <p className="text-base md:text-lg">
+            Stay consistent, stay focused, and watch your habits transform your
+            life.
+          </p>
+        </div>
+      </motion.div>
+
+      <div></div>
 
       {/* Hero slider */}
       <div className="mt-10 md:mt-16">
@@ -151,7 +161,6 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      
 
       {/* DB Featured Habits Section  */}
       <div className="mt-10 md:mt-[80px]">
@@ -169,12 +178,114 @@ const Home = () => {
           Habitify could look:
         </p>
       </div>
-      {/* DB Featured Habits Section  */}
-      <div>
-        <h2 className="font-bold text-center">FROM DB</h2>
-        <LatestHabit>
+      <section>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+           <div className="w-full rounded-2xl mt-20 flex items-center">
+          <span className="border-t-gray-400 border-t-2 flex-1"></span>
+          <span className="px-4 text-center text-2xl sm:text-3xl md:text-5xl whitespace-nowrap">
+          Why 
+          </span>
+          
+          <span className="flex-1 border-t-gray-400 border-t-2"></span>
+        </div>
+        <h2>
+          <h2 className="text-center my-5 text-3xl sm:text-5xl md:text-7xl whitespace-nowrap ">build habits ?</h2>
+          <p className="text-center text-gray-600 mb-10 text-base sm:text-lg">
+  Consistent habits lead to better focus, reduced stress, and personal growth. 
+  Start small, track your progress, and see meaningful results over time.
+</p>
+        </h2>
 
-        </LatestHabit>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
+            {/* Card 1 */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 hover:bg-gray-400 cursor-pointer p-6 flex flex-col items-center text-center">
+              <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                <img
+                  src="https://img.icons8.com/color/96/000000/brain.png"
+                  alt="Better Focus"
+                  className="w-10 h-10"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Better Focus
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Developing habits improves concentration and mental clarity.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 hover:bg-gray-400 cursor-pointer p-6 flex flex-col items-center text-center">
+              <div className="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                <img
+                  src="https://img.icons8.com/color/96/000000/happy.png"
+                  alt="Reduced Stress"
+                  className="w-10 h-10"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Reduced Stress
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Consistent habits help manage stress and improve mental
+                well-being.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 hover:bg-gray-400 cursor-pointer p-6 flex flex-col items-center text-center">
+              <div className="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                <img
+                  src="https://img.icons8.com/color/96/000000/clock.png"
+                  alt="Time Management"
+                  className="w-10 h-10"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Time Management
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Build routines that make your day more productive and organized.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transform transition duration-300 hover:scale-105 hover:bg-gray-400 cursor-pointer p-6 flex flex-col items-center text-center">
+              <div className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mb-4">
+                <img
+                  src={images}
+                  alt="Personal Growth"
+                  className="w-12 h-12 rounded-full"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                Personal Growth
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Small daily habits help you grow and achieve long-term goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* DB Featured Habits Section  */}
+      <div className="my-10">
+        <div className="w-full rounded-2xl mt-20 flex items-center">
+          <span className="border-t-gray-400 border-t-2 flex-1"></span>
+          <h2 className="mx-4 text-center whitespace-nowrap">
+            Explore Services
+          </h2>
+          <span className="flex-1 border-t-gray-400 border-t-2"></span>
+        </div>
+        <h2 className="text-3xl font-bold text-center mt-10 text-gray-900">
+          Explore the Community’s Progress
+        </h2>
+        <p className="text-center text-gray-600 my-5 text-base sm:text-lg">
+          Get inspired by the latest habits and achievements from our community.
+        </p>
+
+        <LatestHabit></LatestHabit>
       </div>
 
       <div className="w-full h-64 rounded-t-4xl  bg-gradient-to-r from-[#deeafc] to-[#f4efff] mt-10 rounded-2xl">
@@ -203,55 +314,79 @@ const Home = () => {
           <span className="flex-1 border-t-gray-400 border-t-2"></span>
         </div>
         <div className="text-center my-10">
-         
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Pick the Plan That Boosts Your Progress
           </h2>
           <p>
-            Start with the Basic plan to track and improve your habits, or upgrade to Premium for personalized guidance, advanced tracking, and full access to expert features.
-        
+            Start with the Basic plan to track and improve your habits, or
+            upgrade to Premium for personalized guidance, advanced tracking, and
+            full access to expert features.
           </p>
         </div>
 
         <div className="bg-[#03045e] mt-10">
-          
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-white px-5 sm:px-8 md:px-12 py-5 sm:py-8 md:py-12 ">
             <div className="col-span-1">
               <div className="flex justify-center items-center border-b-2 my-5 border-b-gray-300">
-         
-             <img className="w-20 invert pb-5" src={fawesome} alt="" />
-          
+                <img className="w-20 invert pb-5" src={fawesome} alt="" />
               </div>
-                
-                <h2 className="text-center my-2 text-lg">Time & Goal Management</h2>
-                <p  className="text-center my-2 text-sm">Organize your daily routines and set priorities to fix time management issues effectively.”.</p>
-            </div>
-            <div className="col-span-1">
-                 <div className="flex justify-center items-center border-b-2 my-5 border-b-gray-300">
-                  <img className="pb-5 invert w-20" src={fawesome2} alt="gfrgtger" />
-              </div>
-                <h2 className="text-center my-2 text-lg">Expert Guidance”</h2>
-                <p  className="text-center my-2 text-sm">Access advice and support from specialists to overcome obstacles and achieve goals faster.</p>
+
+              <h2 className="text-center my-2 text-lg">
+                Time & Goal Management
+              </h2>
+              <p className="text-center my-2 text-sm">
+                Organize your daily routines and set priorities to fix time
+                management issues effectively.”.
+              </p>
             </div>
             <div className="col-span-1">
               <div className="flex justify-center items-center border-b-2 my-5 border-b-gray-300">
-                  <img className="pb-5 invert w-20" src={fawesome3} alt="gfrgtger" />
+                <img
+                  className="pb-5 invert w-20"
+                  src={fawesome2}
+                  alt="gfrgtger"
+                />
               </div>
-                
-                <h2 className="text-center my-2 text-lg">Moderator Support & Updates</h2>
-                <p className="text-center my-2 text-sm">“Our moderators monitor progress, provide feedback, and help users stay on track consistently.</p>
+              <h2 className="text-center my-2 text-lg">Expert Guidance”</h2>
+              <p className="text-center my-2 text-sm">
+                Access advice and support from specialists to overcome obstacles
+                and achieve goals faster.
+              </p>
+            </div>
+            <div className="col-span-1">
+              <div className="flex justify-center items-center border-b-2 my-5 border-b-gray-300">
+                <img
+                  className="pb-5 invert w-20"
+                  src={fawesome3}
+                  alt="gfrgtger"
+                />
+              </div>
+
+              <h2 className="text-center my-2 text-lg">
+                Moderator Support & Updates
+              </h2>
+              <p className="text-center my-2 text-sm">
+                “Our moderators monitor progress, provide feedback, and help
+                users stay on track consistently.
+              </p>
             </div>
             <div className="col-span-1 mb-5">
               <div className="flex justify-center items-center border-b-2 my-5 border-b-gray-300">
-                  <img className="pb-5 invert w-20" src={fawesome4} alt="gfrgtger" />
+                <img
+                  className="pb-5 invert w-20"
+                  src={fawesome4}
+                  alt="gfrgtger"
+                />
               </div>
-                <h2 className="text-center my-2 text-lg">Personalized Problem Tracking</h2>
-                <p className="text-center my-2 text-sm">Users can log their challenges and track progress, taking control of their own growth journey.</p>
+              <h2 className="text-center my-2 text-lg">
+                Personalized Problem Tracking
+              </h2>
+              <p className="text-center my-2 text-sm">
+                Users can log their challenges and track progress, taking
+                control of their own growth journey.
+              </p>
             </div>
-            
-
           </div>
-
         </div>
       </div>
 
@@ -266,7 +401,6 @@ const Home = () => {
         </div>
 
         <div className="text-center my-10">
-         
           <h2 className="text-2xl font-bold text-gray-800 mb-2">
             Choose Your Package Service
           </h2>
@@ -278,7 +412,9 @@ const Home = () => {
         <div className="mt-10 px-4 flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-3">
           {/* Card 1 */}
           <div className="bg-gradient-to-r from-teal-400 to-teal-600 rounded-2xl shadow-sm p-6 flex flex-col text-white font-semibold">
-            <span className="badge badge-xs bg-teal-600 border-teal-600 z-50 text-white mb-3">Basic</span>
+            <span className="badge badge-xs bg-teal-600 border-teal-600 z-50 text-white mb-3">
+              Basic
+            </span>
             <h2 className="text-2xl font-bold mb-2">Standard</h2>
             <span className="text-lg mb-4">$9/mo</span>
             <ul className="flex flex-col gap-2 text-xs mb-4">

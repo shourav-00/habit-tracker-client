@@ -12,7 +12,7 @@ const Layout = () => {
       <div className="">
         <Navbar></Navbar>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 bg-gray-200">
         <div className="max-w-7xl mx-auto">
           {
             loading ? <div className="flex items-center justify-center min-h-screen">

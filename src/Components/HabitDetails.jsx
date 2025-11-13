@@ -89,7 +89,11 @@ const HabitDetails = () => {
   };
 
   return (
+    <div className="py-12">
+
     <div className="max-w-3xl mx-auto bg-gray-900 text-white p-6 rounded-xl shadow-lg">
+
+     
       <h1 className="text-2xl font-bold mb-2">{habit.title}</h1>
       <p className="text-gray-300 mb-4">{habit.description}</p>
       {habit.image && (
@@ -97,7 +101,11 @@ const HabitDetails = () => {
       )}
       <p className="mb-2"><strong>Category:</strong> {habit.category}</p>
       <p className="mb-2">
-        <strong>Creator:</strong> {habit.creator?.name || "Unknown"} ({habit.creator?.email || "N/A"})
+        <strong>Creator:</strong> {habit.name } 
+
+      </p>
+      <p className="mb-2">
+          <strong>Details:</strong> {habit.email}
       </p>
       <p className="mb-2"><strong>Streak:</strong> {streak} days</p>
       <p className="mb-2">{getStreakBadge(streak)}</p>
@@ -146,6 +154,7 @@ const HabitDetails = () => {
           <li>🏆 20+ days</li>
         </ul>
       </div>
+    </div>
     </div>
   );
 };
