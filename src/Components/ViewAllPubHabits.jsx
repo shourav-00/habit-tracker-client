@@ -1,35 +1,40 @@
-import React from 'react';
+import React from "react";
 import Morning from "../assets/Sun.jpg";
 import Evening from "../assets/moon.jpg";
 import Work from "../assets/work.png";
 import Fitness from "../assets/fitness.jpg";
 import Study from "../assets/education.webp";
+import { useNavigate } from "react-router";
 const categoryImage = (category) => {
-    switch (category) {
-      case "Morning":
-        return Morning;
-      case "Work":
-        return Work;
-      case "Fitness":
-        return Fitness;
-      case "Evening":
-        return Evening;
-      case "Study":
-        return Study;
-      default:
-        return null;
-    }
-  };
+  switch (category) {
+    case "Morning":
+      return Morning;
+    case "Work":
+      return Work;
+    case "Fitness":
+      return Fitness;
+    case "Evening":
+      return Evening;
+    case "Study":
+      return Study;
+    default:
+      return null;
+  }
+};
 
 const ViewAllPubHabits = ({ pubUser }) => {
+  const navigate = useNavigate();
   return (
     <div className="p-6">
-        <div className="bg-gray-900 border border-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 text-center my-8 mx-4 sm:mx-10">
-  <h2 className="text-3xl font-bold text-[#00b5d9] mb-2">DExplore Public Habits</h2>
-  <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
-    Discover the latest habits shared by our community. Get inspired, stay consistent, and build new routines every day.
-  </p>
-</div>
+      <div className="bg-gray-900 border border-gray-800 shadow-lg rounded-2xl p-6 sm:p-8 text-center my-8 mx-4 sm:mx-10">
+        <h2 className="text-3xl font-bold text-[#00b5d9] mb-2">
+          Explore Public Habits
+        </h2>
+        <p className="text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
+          Discover the latest habits shared by our community. Get inspired, stay
+          consistent, and build new routines every day.
+        </p>
+      </div>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
         {pubUser && pubUser.length > 0 ? (
           pubUser.map((habit) => (
@@ -53,7 +58,8 @@ const ViewAllPubHabits = ({ pubUser }) => {
 
                 <p className="text-white text-sm mb-1">{habit.description}</p>
                 <p className="text-white text-sm mb-1">
-                  <span className="font-semibold">Category:</span> {habit.category}
+                  <span className="font-semibold">Category:</span>{" "}
+                  {habit.category}
                 </p>
                 <p className="text-white text-sm mb-1">
                   <span className="font-semibold">Time:</span> {habit.time}
@@ -62,9 +68,13 @@ const ViewAllPubHabits = ({ pubUser }) => {
                   <span className="font-semibold">User:</span> {habit.name}
                 </p>
               </div>
-              <button className="bg-[#00b5d9] text-white font-semibold py-2 rounded-md hover:bg-white hover:text-black transition-all">
+              <button
+                onClick={() => navigate(`/habitDetails/${habit._id}`)}
+                className="bg-[#00b5d9] text-white font-semibold py-2 rounded-md hover:bg-white hover:text-black transition-all"
+              >
                 View Details
               </button>
+              
             </div>
           ))
         ) : (
@@ -75,8 +85,8 @@ const ViewAllPubHabits = ({ pubUser }) => {
             <p className="text-gray-300 mb-6 text-center max-w-md">
               Sign in to start tracking your daily habits.
             </p>
-            <button className="bg-[#00b5d9] hover:bg-[#0099b5] text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-md">
-              Go to Login
+            <button className="bg-[#00b5d9] text-white font-semibold py-2 rounded-md hover:bg-white hover:text-black transition-all">
+              View Details
             </button>
           </div>
         )}
@@ -86,3 +96,7 @@ const ViewAllPubHabits = ({ pubUser }) => {
 };
 
 export default ViewAllPubHabits;
+
+
+
+

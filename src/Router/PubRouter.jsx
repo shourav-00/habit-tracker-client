@@ -27,7 +27,7 @@ export const router = createBrowserRouter([
           <Addhabit></Addhabit>
         </PvRouter> },
       {
-        path: "/publicHabits",
+        path: `/publicHabits`,
         Component:PublicHabits,
       },
       {

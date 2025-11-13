@@ -1,25 +1,35 @@
-import React, { use, useEffect, useState } from 'react';
-import { AuthContext } from '../Context/AuthContext';
-import { toast } from 'react-toastify';
-import AllUserInfo from '../Components/AllUserInfo';
+import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
+import AllUserInfo from "../Components/AllUserInfo";
 
 const MyHabits = () => {
-    //const {loading,user}=use(AuthContext)
-    const [userAllData,setuserAllData]=useState([])
-    useEffect(()=>{
-        fetch('http://localhost:3000/UserData')
-        .then(res=>res.json())
-        .then(data=>{
-            setuserAllData(data);
-            //console.log(data)
-        })
-        .catch(err=>toast.error(err.message))
-    },[])
-    return (
-        <div>
-          <AllUserInfo userAllData={userAllData} setuserAllData={setuserAllData}></AllUserInfo>
-        </div>
+  const [userAllData, setuserAllData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/UserData")
+      .then((res) => res.json())
+      .then((data) => setuserAllData(data))
+      .catch((err) => toast.error(err.message));
+  }, []);
+
+  // Function to update streak/completionHistory from child
+  const updateHabitInParent = (id, completionHistory) => {
+    setuserAllData((prev) =>
+      prev.map((habit) =>
+        habit._id === id ? { ...habit, completionHistory } : habit
+      )
     );
+  };
+
+  return (
+    <div>
+      <AllUserInfo
+        userAllData={userAllData}
+        setuserAllData={setuserAllData}
+        updateHabitInParent={updateHabitInParent}
+      />
+    </div>
+  );
 };
 
 export default MyHabits;
