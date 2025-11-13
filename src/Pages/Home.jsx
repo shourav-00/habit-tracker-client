@@ -163,7 +163,7 @@ const Home = () => {
       </div>
 
       {/* DB Featured Habits Section  */}
-      <div className="mt-10 md:mt-[80px]">
+      {/* <div className="mt-10 md:mt-[80px]">
         <img
           className="w-18 sm:w-30 ml-[-10px]  md:ml-[-15px]"
           src={habitTracker}
@@ -177,7 +177,7 @@ const Home = () => {
           on track for <br /> success. Here’s an example of how your day with
           Habitify could look:
         </p>
-      </div>
+      </div> */}
       <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
            <div className="w-full rounded-2xl mt-20 flex items-center">
