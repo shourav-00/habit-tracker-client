@@ -6,24 +6,20 @@ import { AuthContext } from "../Context/AuthContext";
 const Update = () => {
   const { id } = useParams();
   const [habitInfo, setHabitInfo] = useState(null);
-  
 
-  
   useEffect(() => {
-    fetch(`http://localhost:3000/UserDat/${id}`)
+    fetch(`https://shourav-havittracker-server.onrender.com/UserDat/${id}`)
       .then((res) => res.json())
-      .then((data) =>{
-        console.log(data);
+      .then((data) => {
+        //console.log(data);
         setHabitInfo(data);
-        
-      }
-        
-      )
+      })
 
-      
-      .catch((err) => console.log(err));
+      .catch((err) => 
+        {
+          //console.log(err)
+        });
   }, [id]);
-
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -38,17 +34,17 @@ const Update = () => {
       name: habitInfo.name,
     };
 
-    fetch(`http://localhost:3000/UserData/${id}`, {
+    fetch(`https://shourav-havittracker-server.onrender.com/UserData/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(updatedHabit),
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success('Updated successfully');
+        toast.success("Updated successfully");
       })
       .catch((err) => {
-        toast.error(err.message);
+        //toast.error(err.message);
       });
   };
 
@@ -63,7 +59,6 @@ const Update = () => {
         </h2>
 
         <form onSubmit={handleUpdate} className="space-y-5">
-       
           <div>
             <label className="text-white block mb-1">Habit Title</label>
             <input

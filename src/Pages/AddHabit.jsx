@@ -14,7 +14,7 @@ const AddHabit = () => {
     const image = e.target.image.files[0];
     const name = e.target.name.value;
     const email = e.target.email.value;
-    console.log(title, description, time, category, image, name, email);
+    //console.log(title, description, time, category, image, name, email);
 
     const addHabit = {
       title: title,
@@ -27,7 +27,7 @@ const AddHabit = () => {
       createdAt: new Date() //hahahaha
     };
 
-    fetch('http://localhost:3000/addHabits',{
+    fetch('https://shourav-havittracker-server.onrender.com/addHabits',{
       method:'POST',
       headers:{
         'content-type':'application/json',
@@ -38,11 +38,11 @@ const AddHabit = () => {
       res.json()
       )
     .then(data=>{
-        console.log(data);
+        //console.log(data);
         toast.success("Successfully added")
     })
     .catch(err=>{
-      toast.error(err.message);
+      //toast.error(err.message);
     })
   };
   return (

@@ -6,7 +6,7 @@ const MyHabits = () => {
   const [userAllData, setuserAllData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/UserData")
+    fetch("https://shourav-havittracker-server.onrender.com/UserData")
       .then((res) => res.json())
       .then((data) => setuserAllData(data))
       .catch((err) => toast.error(err.message));

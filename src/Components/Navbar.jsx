@@ -10,7 +10,7 @@ const Navbar = () => {
   const { user, logOut } = use(AuthContext);
   const [open, setOpen] = useState(false);
   const navigate=useNavigate();
-  console.log(user)
+  //console.log(user)
   //console.log(user.photoURL);
 
   
